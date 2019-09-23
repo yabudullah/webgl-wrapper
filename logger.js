@@ -5,22 +5,22 @@
  * Description:     This file implements the logging functionality in an organised way.
 **/
 
-function LOGDEBUG(logTitle, logMessage)
+function LOGDEBUG(fileName, functionName, logMessage)
 {
-    console.log("[!]DEBUG.\t" + logTitle + " " + logMessage);
+    console.log("[!]DEBUG.\t" + fileName + " " + functionName + " " + logMessage);
 }
 
-function LOGINFO(logTitle, logMessage)
+function LOGINFO(fileName, functionName, logMessage)
 {
-    console.log("[!]INFO.\t" + logTitle + " " + logMessage);
+    console.log("[!]INFO.\t" + fileName + " " + functionName + " " + logMessage);
 }
 
-function LOGSUCCESS(logTitle, logMessage)
+function LOGSUCCESS(fileName, functionName, logMessage)
 {
-    console.log("[+]SUCCESS.\t" + logTitle + " " + logMessage);
+    console.log("[!]SUCCESS.\t" + fileName + " " + functionName + " " + logMessage);
 }
 
-function LOGERROR(logTitle, logMessage)
+function LOGERROR(fileName, functionName, logMessage)
 {
-    console.log("[-]ERROR.\t" + logTitle + " " + logMessage);
+    console.log("[!]ERROR.\t" + fileName + " " + functionName + " " + logMessage);
 }
