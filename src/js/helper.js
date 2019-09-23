@@ -34,7 +34,7 @@ function createButton(buttonId, buttonValue, htmlDOMParent) {
      * The HTML DOM parent element under which the button will be created
      */
 
-    LOGDEBUG("helper.js", "createButton()", "createButton() called.");
+    Logger.LOGDEBUG("helper.js", "createButton()", "createButton() called.");
 
     createLineBreak(htmlDOMParent);
 
@@ -120,7 +120,7 @@ function getValue(domId)
 
 function createCanvas(domId, width, height)
 {
-    LOGDEBUG("helper.js", "createCanvas()", "createCanvas() called.");
+    Logger.LOGDEBUG("helper.js", "createCanvas()", "createCanvas() called.");
     
     var canvas = document.createElement("CANVAS");
     canvas.id = domId;

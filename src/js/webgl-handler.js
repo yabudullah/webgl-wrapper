@@ -82,7 +82,7 @@ class WebGLHandler {
         this.setupWebGLContext();
 
         if (!this.glContext) {
-            LOGERROR("webgl-handler.js", "WebGLHandler::loadContext()", "WebGL is not available in current context.");
+            Logger.LOGERROR("webgl-handler.js", "WebGLHandler::loadContext()", "WebGL is not available in current context.");
             alert("WebGL isn't available");
         }
         else {
