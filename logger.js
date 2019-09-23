@@ -6,19 +6,19 @@
 **/
 
 class Logger {
-    LOGDEBUG(fileName, functionName, logMessage) {
+    static LOGDEBUG(fileName, functionName, logMessage) {
         console.log("[!]DEBUG.\t" + fileName + " " + functionName + " " + logMessage);
     }
 
-    LOGINFO(fileName, functionName, logMessage) {
+    static LOGINFO(fileName, functionName, logMessage) {
         console.log("[!]INFO.\t" + fileName + " " + functionName + " " + logMessage);
     }
 
-    LOGSUCCESS(fileName, functionName, logMessage) {
+    static LOGSUCCESS(fileName, functionName, logMessage) {
         console.log("[!]SUCCESS.\t" + fileName + " " + functionName + " " + logMessage);
     }
 
-    LOGERROR(fileName, functionName, logMessage) {
+    static LOGERROR(fileName, functionName, logMessage) {
         console.log("[!]ERROR.\t" + fileName + " " + functionName + " " + logMessage);
     }
 }
