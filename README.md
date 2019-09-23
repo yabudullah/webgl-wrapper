@@ -5,16 +5,24 @@ WebGL Wrapper is a _JavaScript_ tool built on top of WebGL. It provides an inter
 Following are some samples which are rendered using WebGL Wrapper. Their source code can be found in sample/
 
 ### Sierpinski Triangle
-<img align="center" src="./assets/img/sierpinski.PNG" alt="Sierpinski Triangle">
+<p align="center">
+	<img src="./assets/img/sierpinski.PNG" alt="Sierpinski Triangle">
+</p>
 
 ### Interpolation in Color Bars
-<img align="center" src="./assets/img/colorbar.PNG" alt="Color Bars">
+<p align="center">
+	<img src="./assets/img/colorbar.PNG" alt="Color Bars">
+</p>
 
 ### Maxwell Triangle
-<img align="center" src="./assets/img/maxwell.PNG" alt="Maxwell Triangle">
+<p align="center">
+	<img src="./assets/img/maxwell.PNG" alt="Maxwell Triangle">
+</p>
 
 ### Visualisation of Mandelbrot Set
-<img align="center" src="./assets/img/mandelbrot.PNG" alt="Mandelbrot Set">
+<p align="center">
+	<img src="./assets/img/mandelbrot.PNG" alt="Mandelbrot Set">
+</p>
 
 ## Discussion
 - Email maintainer at [emad.bin.abid@gmail.com](emad.bin.abid@gmail.com)
