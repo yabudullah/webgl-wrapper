@@ -19,11 +19,6 @@ Following are some samples which are rendered using WebGL Wrapper. Their source 
 	<img src="./assets/img/maxwell.PNG" alt="Maxwell Triangle">
 </p>
 
-### Visualisation of Mandelbrot Set
-<p align="center">
-	<img src="./assets/img/mandelbrot.PNG" alt="Mandelbrot Set">
-</p>
-
 ## Discussion
 - Email maintainer at [emad.bin.abid@gmail.com](emad.bin.abid@gmail.com)
 - GitHub discussions
