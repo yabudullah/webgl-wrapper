@@ -21,6 +21,7 @@ class WebGLHandler {
         this.isRotationZ = false;
         this.angleOfRotation = 2.0;
         this.thetaLocation;
+        this.thetaVector = vec3(0.0, 0.0, 0.0);
     }
 
     getWebGLHandler() {
@@ -176,32 +177,23 @@ class WebGLHandler {
         return thetaLocation;
     }
 
-    enableRotationX(thetaVector) {
-        this.isRotationX = true;
-
-        thetaVector[0] += 2.0;
-        this.glContext.uniform3fv(this.thetaLocation, thetaVector);
+    setRotationX(isRotation) {
+        this.isRotationX = isRotation;
     }
 
-    enableRotationY(thetaVector) {
-        this.isRotationY = true;
-
-        thetaVector[1] += 2.0;
-        this.glContext.uniform3fv(this.thetaLocation, thetaVector);
+    setRotationY(isRotation) {
+        this.isRotationY = isRotation;
     }
 
-    enableRotationZ(thetaVector) {
-        this.isRotationZ = true;
-
-        thetaVector[2] += this.angleOfRotation;
-        this.glContext.uniform3fv(this.thetaLocation, thetaVector);
+    setRotationZ(isRotation) {
+        this.isRotationZ = isRotation;
     }
 
     setRotationAngle(angleOfRotation) {
         this.angleOfRotation = angleOfRotation;
     }
 
-    render(shape, startIndex, numberOfPoints, clearContext=true) {
+    render(shape, startIndex, numberOfPoints, clearContext = true) {
         /**
          * @summary
          * A function to render shape onto screen
@@ -220,10 +212,25 @@ class WebGLHandler {
             this.glContext.clear(this.glContext.COLOR_BUFFER_BIT);
         }
 
+        if (this.isRotationX) {
+            this.thetaVector[0] += this.angleOfRotation;
+            this.glContext.uniform3fv(this.thetaLocation, this.thetaVector);
+        }
+
+        if (this.isRotationY) {
+            this.thetaVector[1] += this.angleOfRotation;
+            this.glContext.uniform3fv(this.thetaLocation, this.thetaVector);
+        }
+
+        if (this.isRotationZ) {
+            this.thetaVector[2] += this.angleOfRotation;
+            this.glContext.uniform3fv(this.thetaLocation, this.thetaVector);
+        }
+
         this.glContext.drawArrays(shape, startIndex, numberOfPoints);
 
-        if (!this.isRotationX || !this.isRotationY || !this.isRotationZ) {
-            requestAnimFrame(render, shape, startIndex, numberOfPoints, clearContext);
+        if (this.isRotationX || this.isRotationY || this.isRotationZ) {
+            requestAnimFrame(this.render.bind(this, shape, startIndex, numberOfPoints, clearContext));
         }
     }
 }
