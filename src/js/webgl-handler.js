@@ -16,6 +16,11 @@ class WebGLHandler {
         this.glContext = WebGLUtils.setupWebGL(getElement(this.canvasId));
         this.program = initShaders(this.glContext, "vertex-shader", "fragment-shader");
         this.canvasColor;
+        this.isRotationX = false;
+        this.isRotationY = false;
+        this.isRotationZ = false;
+        this.angleOfRotation = 2.0;
+        this.thetaLocation;
     }
 
     getWebGLHandler() {
@@ -169,6 +174,31 @@ class WebGLHandler {
         var thetaLocation = this.glContext.getUniformLocation(this.program, variables);
         this.thetaLocation = thetaLocation;
         return thetaLocation;
+    }
+
+    enableRotationX(thetaVector) {
+        this.isRotationX = true;
+
+        thetaVector[0] += 2.0;
+        this.glContext.uniform3fv(this.thetaLocation, thetaVector);
+    }
+
+    enableRotationY(thetaVector) {
+        this.isRotationY = true;
+
+        thetaVector[1] += 2.0;
+        this.glContext.uniform3fv(this.thetaLocation, thetaVector);
+    }
+
+    enableRotationZ(thetaVector) {
+        this.isRotationZ = true;
+
+        thetaVector[2] += this.angleOfRotation;
+        this.glContext.uniform3fv(this.thetaLocation, thetaVector);
+    }
+
+    setRotationAngle(angleOfRotation) {
+        this.angleOfRotation = angleOfRotation;
     }
 
     render(shape, startIndex, numberOfPoints, clearContext=true) {
