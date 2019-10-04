@@ -219,6 +219,11 @@ class WebGLHandler {
         if (clearContext) {
             this.glContext.clear(this.glContext.COLOR_BUFFER_BIT);
         }
-        this.glContext.drawArrays(shape, startIndex, numberOfPoints); 
+
+        this.glContext.drawArrays(shape, startIndex, numberOfPoints);
+
+        if (!this.isRotationX || !this.isRotationY || !this.isRotationZ) {
+            requestAnimFrame(render, shape, startIndex, numberOfPoints, clearContext);
+        }
     }
 }
