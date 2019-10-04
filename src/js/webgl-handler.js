@@ -160,6 +160,17 @@ class WebGLHandler {
         this.glContext.enableVertexAttribArray(vertexColor);
     }
 
+    bindUniformVariables(variables) {
+        var thetaLocation = this.glContext.getUniformLocation(this.program, variables);
+        this.thetaLocation = thetaLocation;
+    }
+
+    bindAndGetUniformVariables(variables) {
+        var thetaLocation = this.glContext.getUniformLocation(this.program, variables);
+        this.thetaLocation = thetaLocation;
+        return thetaLocation;
+    }
+
     render(shape, startIndex, numberOfPoints, clearContext=true) {
         /**
          * @summary
