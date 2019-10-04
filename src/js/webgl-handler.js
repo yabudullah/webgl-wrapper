@@ -118,7 +118,7 @@ class WebGLHandler {
         this.glContext.bufferData(this.glContext.ARRAY_BUFFER, flatten(data), this.glContext.STATIC_DRAW);
     }
 
-    bindVertexVariables(variables) {
+    bindVertexVariables(vertexDimension, variables) {
         /**
          * @summary
          * A function to bind vertex shader variable with JavaScript variable
@@ -128,7 +128,7 @@ class WebGLHandler {
          */
 
         var vertexPosition = this.glContext.getAttribLocation(this.program, variables);
-        this.glContext.vertexAttribPointer(vertexPosition, 2, this.glContext.FLOAT, false, 0, 0);
+        this.glContext.vertexAttribPointer(vertexPosition, vertexDimension, this.glContext.FLOAT, false, 0, 0);
         this.glContext.enableVertexAttribArray(vertexPosition);
     }
 
@@ -146,7 +146,7 @@ class WebGLHandler {
         this.glContext.bufferData(this.glContext.ARRAY_BUFFER, flatten(data), this.glContext.STATIC_DRAW);
     }
 
-    bindColorVariables(variables) {
+    bindColorVariables(vertexDimension, variables) {
         /**
          * @summary
          * A function to bind fragment shader variable with JavaScript variable
@@ -156,7 +156,7 @@ class WebGLHandler {
          */
 
         var vertexColor = this.glContext.getAttribLocation(this.program, variables);
-        this.glContext.vertexAttribPointer(vertexColor, 4, this.glContext.FLOAT, false, 0, 0);
+        this.glContext.vertexAttribPointer(vertexColor, vertexDimension, this.glContext.FLOAT, false, 0, 0);
         this.glContext.enableVertexAttribArray(vertexColor);
     }
 
